@@ -1,11 +1,16 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: #f0f4f8;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  
 }
 
 .container {
@@ -13,12 +18,30 @@ body {
   background: white;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  border: 2px solid #cfd2d8;
+  transition: border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
   color: #333;
   margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-top: 0;
+  padding: 0 10px;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  animation: textGlow 1.5s infinite alternate;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .board {
@@ -27,6 +50,16 @@ h1 {
   gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
+
+  animation: slideIn 0.5s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  
 }
 
 .cell {
@@ -40,33 +73,74 @@ h1 {
   cursor: pointer;
   border-radius: 10px;
   transition: background 0.2s;
+  border: 2px solid #cfd2d8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  font-weight: bold;
 }
 
 .cell:hover {
   background: #e2e8f0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+  transform: scale(1.05);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+
 }
 
 .cell.win {
   background: #a7f3d0;
   color: #065f46;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
 .status {
   font-size: 1.2rem;
   margin-bottom: 15px;
+  color: #4b5563;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 button {
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
   color: white;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 10px;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 button:hover {
   background: #2563eb;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+
+  animation: fadeIn 0.5s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+
 }
